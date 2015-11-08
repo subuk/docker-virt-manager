@@ -10,6 +10,11 @@ docker build -t subuk/virt-manager .
 
 ## Installation
 
+Build (see above) or pull from docker hub:
+
+    docker pull subuk/virt-manager
+
+
 Create container:
     
     docker create --name virt-manager -v $HOME/.ssh/known_hosts:/home/app/.ssh/known_hosts -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK -v /usr/share/fonts:/usr/share/fonts -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY="$DISPLAY" subuk/virt-manager
